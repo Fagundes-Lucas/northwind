@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_produtos
+    description: dim de produtos da northwind.
+    columns:
+      - name: id_produtos
+        description: chave primaria da tabela
+        tests:
+          - unique
+          - not_null

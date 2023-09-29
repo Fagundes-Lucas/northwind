@@ -11,5 +11,17 @@ sources:
             tests:
             - unique
             - not_null
+
+      - name: products
+        description: Tabela com os produto comercializados pela Northwind
+
+      - name: categories
+        description: Tabela com as categorias dos produtos
+
+      - name: suppliers
+        description: Fornecedores dos produtos
+
+            
+
                 
       
