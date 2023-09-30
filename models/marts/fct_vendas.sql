@@ -17,6 +17,7 @@ with
     , joined_tabelas as (
         select
              pedido_itens.pk_vendas
+            , pedido_itens.id_pedido 
             , produtos.id_produto
             , employees.funcionario_id
             , pedido_itens.id_transportadora
@@ -44,5 +45,15 @@ with
         left join employees on pedido_itens.id_funcionario = employees.funcionario_id
     )
 
+
+    , transformacoes as (
+        select
+            *
+            , (preco_da_unidade * quantidade) as total_bruto
+            , (preco_da_unidade * quantidade) * (1 - desconto_perc) as total_liquido
+            , frete / count(*) over (partition by id_pedido) as frete_divido_pelos_itens 
+        from joined_tabelas
+    )
+
 select *
-from joined_tabelas
+from transformacoes
