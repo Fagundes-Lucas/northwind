@@ -21,6 +21,18 @@ sources:
       - name: suppliers
         description: Fornecedores dos produtos
 
+      - name: orders
+        description: Uma linha por pedido, inclui pedidos cancelados e deletados.
+        columns:
+          - name: order_id
+            description: chave primaria da tabela ordem
+            tests:
+              - unique
+              - not_null
+
+      - name: order_details
+        description: Detalhe de item, linha para cada pedido da tabela ordem      
+
             
 
                 

@@ -6,12 +6,12 @@ with
 
   , categorias as (
         select *
-        from {{ ref('stg_erp_categorias') }}
+        from {{ ref('stg_erp__categorias') }}
     )
 
   , fornecedores as (
         select *
-        from {{ ref('stg_erp_fornecedores') }}
+        from {{ ref('stg_erp__fornecedores') }}
     )
 
 
