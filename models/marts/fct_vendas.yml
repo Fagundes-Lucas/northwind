@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fct_vendas
+    description: dim de produtos da northwind.
+    columns:
+      - name: pk_vendas
+        description: chave primaria da tabela
+        tests:
+          - unique
+          - not_null
